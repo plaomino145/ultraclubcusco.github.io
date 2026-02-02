@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ultra Club Cusco - The House of Energy. El mejor club nocturno de Cusco con entradas GRATIS y eventos todas las semanas.">
+    <meta name="keywords" content="Ultra Club, Cusco, discoteca, club nocturno, eventos, fiestas, DJ, música">
+    <title>ULTRA CLUB CUSCO - The House of Energy</title>
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Menú flotante -->
+    <div class="floating-menu">
+        <div class="menu-btn" onclick="openSideMenu()" title="Menú">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu-btn" onclick="scrollToTop()" title="Ir arriba">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+
+    <!-- Menú lateral -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <h3 class="side-menu-title">ULTRA CLUB</h3>
+            <div class="close-side-menu" onclick="closeSideMenu()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        
+        <div class="side-menu-links">
+            <a href="#inicio" onclick="closeSideMenu()">
+                <i class="fas fa-home"></i> INICIO
+            </a>
+            <a href="#entradas" onclick="closeSideMenu()">
+                <i class="fas fa-ticket-alt"></i> ENTRADAS
+            </a>
+            <a href="#eventos" onclick="closeSideMenu()">
+                <i class="fas fa-calendar-alt"></i> EVENTOS
+            </a>
+            <a href="#galeria" onclick="closeSideMenu()">
+                <i class="fas fa-video"></i> GALERÍA
+            </a>
+            <a href="#contacto" onclick="closeSideMenu()">
+                <i class="fas fa-phone"></i> CONTACTO
+            </a>
+            <a href="https://wa.me/51956246405" target="_blank">
+                <i class="fas fa-crown"></i> MESAS VIP
+            </a>
+        </div>
+        
+        <div class="side-menu-footer">
+            <div class="social-links">
+                <a href="https://www.facebook.com/ultraclub.cusco" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ultraclubcusco" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@ultraclub.cusco" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/51956246405" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portada con Video de Fondo -->
+    <section class="portada-section" id="inicio">
+        <!-- Video de fondo -->
+        <div class="video-background">
+            <div class="video-overlay"></div>
+            <!-- Video de YouTube embebido (reemplaza VIDEO_ID con el ID de tu video) -->
+            <iframe 
+                src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                class="background-video">
+            </iframe>
+            <!-- Alternativa con video MP4 directo -->
+            <!-- 
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="https://tu-video-url.com/video.mp4" type="video/mp4">
+            </video>
+            -->
+        </div>
+        
+        <div class="portada-title">
+            <h1>ULTRA CLUB</h1>
+            <div class="subtitle">THE HOUSE OF ENERGY</div>
+        </div>
+        
+        <div class="portada-grid">
+            <div class="portada-square portada-square-1" onclick="scrollToSection('entradas')" 
+                 style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.25), rgba(0, 0, 0, 0.95)), url('images/entradas-bg.jpg'); background-size: cover; background-position: center;">
+                <div class="portada-square-icon">🎟️</div>
+                <h3 class="portada-square-title">ENTRADAS GRATIS</h3>
+                <p class="portada-square-description">Reserva tu entrada GRATIS y vive la experiencia nocturna más exclusiva de Cusco</p>
+                <div class="portada-square-cta">
+                    VER ENTRADAS <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            
+            <div class="portada-square portada-square-2" onclick="scrollToSection('eventos')" 
+                 style="background: linear-gradient(135deg, rgba(255, 51, 102, 0.25), rgba(0, 0, 0, 0.95)), url('images/eventos-bg.jpg'); background-size: cover; background-position: center;">
+                <div class="portada-square-icon">🔥</div>
+                <h3 class="portada-square-title">EVENTOS</h3>
+                <p class="portada-square-description">Los mejores DJs y eventos especiales todas las semanas</p>
+                <div class="portada-square-cta">
+                    VER EVENTOS <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            
+            <div class="portada-square portada-square-3" onclick="window.open('https://wa.me/51956246405', '_blank')" 
+                 style="background: linear-gradient(135deg, rgba(51, 102, 255, 0.25), rgba(0, 0, 0, 0.95)), url('images/vip-bg.jpg'); background-size: cover; background-position: center;">
+                <div class="portada-square-icon">💎</div>
+                <h3 class="portada-square-title">MESAS VIP</h3>
+                <p class="portada-square-description">Reserva tu mesa VIP con bottle service y atención personalizada</p>
+                <div class="portada-square-cta">
+                    RESERVAR <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            
+            <div class="portada-square portada-square-4" onclick="scrollToSection('galeria')" 
+                 style="background: linear-gradient(135deg, rgba(157, 78, 221, 0.25), rgba(0, 0, 0, 0.95)), url('images/galeria-bg.jpg'); background-size: cover; background-position: center;">
+                <div class="portada-square-icon">📱</div>
+                <h3 class="portada-square-title">GALERÍA</h3>
+                <p class="portada-square-description">Mira nuestros mejores momentos en TikTok e Instagram</p>
+                <div class="portada-square-cta">
+                    VER VIDEOS <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item">ULTRA CLUB CUSCO</span>
+                <span class="marquee-item">│</span>
+                <span class="marquee-item">ENTRADA GRATIS</span>
+                <span class="marquee-item">│</span>
+                <span class="marquee-item">+51 956 246 405</span>
+                <span class="marquee-item">│</span>
+            </div>
+            <div class="marquee-content">
+                <span class="marquee-item">ULTRA CLUB CUSCO</span>
+                <span class="marquee-item">│</span>
+                <span class="marquee-item">ENTRADA GRATIS</span>
+                <span class="marquee-item">│</span>
+                <span class="marquee-item">+51 956 246 405</span>
+                <span class="marquee-item">│</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Entradas -->
+    <section class="tickets-section" id="entradas">
+        <h2 class="section-title">TIPOS DE ENTRADA</h2>
+        <p class="section-subtitle">Todas las entradas son GRATIS - Solo reserva tu acceso</p>
+        
+        <div class="tickets-grid">
+            <!-- Entrada General -->
+            <div class="ticket-card">
+                <div class="ticket-badge">MÁS POPULAR</div>
+                <div class="ticket-icon">🎟️</div>
+                <h3 class="ticket-name">ENTRADA GENERAL</h3>
+                <div class="ticket-price">GRATIS<span>POR PERSONA</span></div>
+                <ul class="ticket-features">
+                    <li><i class="fas fa-check"></i> Acceso a zona principal</li>
+                    <li><i class="fas fa-check"></i> Música en vivo</li>
+                    <li><i class="fas fa-check"></i> Barra de tragos disponible</li>
+                    <li><i class="fas fa-check"></i> Horario: 22:00 - 05:00</li>
+                    <li><i class="fas fa-check"></i> Dress code: Casual elegante</li>
+                    <li><i class="fas fa-check"></i> Mayores de 21 años</li>
+                </ul>
+                <button class="btn btn-gold" onclick="openTicketModal('Entrada General', 'Entrada General', 0)">RESERVAR GRATIS</button>
+            </div>
+
+            <!-- Entrada VIP -->
+            <div class="ticket-card ticket-vip">
+                <div class="ticket-badge vip-badge">VIP</div>
+                <div class="ticket-icon">💎</div>
+                <h3 class="ticket-name">ENTRADA VIP</h3>
+                <div class="ticket-price">GRATIS<span>POR PERSONA</span></div>
+                <ul class="ticket-features">
+                    <li><i class="fas fa-check"></i> Acceso prioritario</li>
+                    <li><i class="fas fa-check"></i> Zona VIP exclusiva</li>
+                    <li><i class="fas fa-check"></i> Vista privilegiada del DJ</li>
+                    <li><i class="fas fa-check"></i> Barra VIP disponible</li>
+                    <li><i class="fas fa-check"></i> Servicio personalizado</li>
+                    <li><i class="fas fa-check"></i> Regalo de bienvenida</li>
+                </ul>
+                <button class="btn btn-gold" onclick="openTicketModal('Entrada VIP', 'Entrada VIP', 0)">RESERVAR GRATIS</button>
+            </div>
+
+            <!-- Mesa VIP -->
+            <div class="ticket-card">
+                <div class="ticket-badge premium-badge">PREMIUM</div>
+                <div class="ticket-icon">🍾</div>
+                <h3 class="ticket-name">MESA VIP</h3>
+                <div class="ticket-price">CONSULTAR<span>GRUPO</span></div>
+                <ul class="ticket-features">
+                    <li><i class="fas fa-check"></i> Mesa reservada (4-8 personas)</li>
+                    <li><i class="fas fa-check"></i> Bottle service incluido</li>
+                    <li><i class="fas fa-check"></i> Mesero dedicado</li>
+                    <li><i class="fas fa-check"></i> Ubicación premium</li>
+                    <li><i class="fas fa-check"></i> Acceso VIP total</li>
+                    <li><i class="fas fa-check"></i> Celebraciones especiales</li>
+                </ul>
+                <button class="btn btn-gold" onclick="window.open('https://wa.me/51956246405', '_blank')">CONSULTAR PRECIO</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos -->
+    <section class="events-section" id="eventos">
+        <h2 class="section-title">PRÓXIMOS EVENTOS</h2>
+        <p class="section-subtitle">Los mejores eventos con DJs internacionales</p>
+        
+        <div class="events-grid">
+            <!-- Evento 1 -->
+            <div class="event-card">
+                <div class="event-image-container">
+                    <div class="event-emoji">🎧</div>
+                    <!-- Si tienes imágenes de flyers, agrégalas así: -->
+                    <!-- <img src="images/evento1.jpg" alt="Friday Night"> -->
+                </div>
+                <div class="event-info">
+                    <div class="free-badge">ENTRADA GRATIS</div>
+                    <button class="btn btn-gold" onclick="openTicketModal('Friday Night', 'Evento Especial', 0)">RESERVAR ENTRADA</button>
+                </div>
+            </div>
+
+            <!-- Evento 2 -->
+            <div class="event-card">
+                <div class="event-image-container">
+                    <div class="event-emoji">🔥</div>
+                </div>
+                <div class="event-info">
+                    <div class="free-badge">ENTRADA GRATIS</div>
+                    <button class="btn btn-gold" onclick="openTicketModal('Saturday Party', 'Evento Especial', 0)">RESERVAR ENTRADA</button>
+                </div>
+            </div>
+
+            <!-- Evento 3 -->
+            <div class="event-card">
+                <div class="event-image-container">
+                    <div class="event-emoji">💎</div>
+                </div>
+                <div class="event-info">
+                    <div class="free-badge">ENTRADA GRATIS</div>
+                    <button class="btn btn-gold" onclick="openTicketModal('Themed Nights', 'Evento Especial', 0)">RESERVAR ENTRADA</button>
+                </div>
+            </div>
+
+            <!-- Evento 4 -->
+            <div class="event-card">
+                <div class="event-image-container">
+                    <div class="event-emoji">🎵</div>
+                </div>
+                <div class="event-info">
+                    <div class="free-badge">ENTRADA GRATIS</div>
+                    <button class="btn btn-gold" onclick="openTicketModal('Ladies Night', 'Evento Especial', 0)">RESERVAR ENTRADA</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: Galería de Videos TikTok e Instagram -->
+    <section class="social-gallery-section" id="galeria">
+        <h2 class="section-title">GALERÍA SOCIAL</h2>
+        <p class="section-subtitle">Vive la experiencia Ultra en nuestras redes</p>
+        
+        <div class="social-tabs">
+            <button class="tab-btn active" onclick="switchTab('tiktok')">
+                <i class="fab fa-tiktok"></i> TIKTOK
+            </button>
+            <button class="tab-btn" onclick="switchTab('instagram')">
+                <i class="fab fa-instagram"></i> INSTAGRAM
+            </button>
+        </div>
+
+        <!-- TikTok Videos -->
+        <div class="social-content active" id="tiktok-content">
+            <div class="video-grid">
+                <!-- Video TikTok 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ultraclub.cusco" data-video-id="TU_VIDEO_ID_1">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    <div class="video-info">
+                        <h4>🔥 Noche épica en Ultra</h4>
+                        <p>@ultraclub.cusco</p>
+                    </div>
+                </div>
+
+                <!-- Video TikTok 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ultraclub.cusco" data-video-id="TU_VIDEO_ID_2">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    <div class="video-info">
+                        <h4>💎 Zona VIP Ultra</h4>
+                        <p>@ultraclub.cusco</p>
+                    </div>
+                </div>
+
+                <!-- Video TikTok 3 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ultraclub.cusco" data-video-id="TU_VIDEO_ID_3">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    <div class="video-info">
+                        <h4>🎧 DJ Session</h4>
+                        <p>@ultraclub.cusco</p>
+                    </div>
+                </div>
+
+                <!-- Agregar más videos según necesites -->
+            </div>
+            
+            <div class="social-cta">
+                <a href="https://www.tiktok.com/@ultraclub.cusco" target="_blank" class="btn btn-social">
+                    <i class="fab fa-tiktok"></i> VER MÁS EN TIKTOK
+                </a>
+            </div>
+        </div>
+
+        <!-- Instagram Videos -->
+        <div class="social-content" id="instagram-content">
+            <div class="video-grid">
+                <!-- Video Instagram 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/TU_REEL_ID/" data-instgrm-version="14">
+                        </blockquote>
+                    </div>
+                    <div class="video-info">
+                        <h4>✨ Momentos Ultra</h4>
+                        <p>@ultraclubcusco</p>
+                    </div>
+                </div>
+
+                <!-- Video Instagram 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/TU_REEL_ID/" data-instgrm-version="14">
+                        </blockquote>
+                    </div>
+                    <div class="video-info">
+                        <h4>🎉 Fiesta inolvidable</h4>
+                        <p>@ultraclubcusco</p>
+                    </div>
+                </div>
+
+                <!-- Video Instagram 3 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/TU_REEL_ID/" data-instgrm-version="14">
+                        </blockquote>
+                    </div>
+                    <div class="video-info">
+                        <h4>🌟 La mejor atmósfera</h4>
+                        <p>@ultraclubcusco</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-cta">
+                <a href="https://www.instagram.com/ultraclubcusco" target="_blank" class="btn btn-social">
+                    <i class="fab fa-instagram"></i> VER MÁS EN INSTAGRAM
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Reserva -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modalEventTitle">RESERVAR ENTRADA</h2>
+            
+            <div id="ticketForm">
+                <!-- Resumen -->
+                <div class="purchase-summary">
+                    <h3>📋 RESUMEN DE RESERVA</h3>
+                    <div class="summary-item">
+                        <span class="summary-label">Evento:</span>
+                        <span class="summary-value" id="summaryEvent">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Tipo de Entrada:</span>
+                        <span class="summary-value" id="summaryTicketType">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Cantidad:</span>
+                        <span class="summary-value">1 PERSONA</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total:</span>
+                        <span class="summary-value price">GRATIS ✨</span>
+                    </div>
+                </div>
+
+                <!-- Formulario simplificado -->
+                <div class="form-row">
+                    <div class="form-group input-with-icon">
+                        <label for="buyerName">
+                            <i class="fas fa-user"></i> Nombre Completo
+                        </label>
+                        <input type="text" id="buyerName" placeholder="Ej: Juan Pérez López" required>
+                    </div>
+
+                    <div class="form-group input-with-icon">
+                        <label for="buyerDNI">
+                            <i class="fas fa-id-card"></i> DNI
+                        </label>
+                        <input type="text" id="buyerDNI" placeholder="Ej: 12345678" maxlength="8" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-info-circle"></i> NOTA IMPORTANTE</label>
+                    <p style="color: #ffd700; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px; border-left: 3px solid var(--color-gold);">
+                        ✓ Todas las entradas son GRATIS<br>
+                        ✓ Solo 1 entrada por persona<br>
+                        ✓ Presentar DNI físico al ingresar<br>
+                        ✓ Mayores de 21 años
+                    </p>
+                </div>
+                
+                <button class="btn btn-whatsapp" onclick="sendToWhatsApp()" style="width: 100%; margin-top: 2rem;">
+                    <i class="fab fa-whatsapp"></i> CONFIRMAR RESERVA POR WHATSAPP
+                </button>
+
+                <p class="modal-note">
+                    * Serás redirigido a WhatsApp para confirmar tu reserva con el número +51 956 246 405
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ULTRA CLUB CUSCO</h3>
+                <p>🔥 THE HOUSE OF ENERGY</p>
+                <p>Inspirado en los clubes de Londres y Berlín. 
+                   Ultra llega a Cusco con un nuevo concepto underground y cosmopolita.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ultraclub.cusco" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ultraclubcusco" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@ultraclub.cusco" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/51956246405" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>INFORMACIÓN OFICIAL</h3>
+                <p>🏷️ <strong>Nombre:</strong> Ultra Club Cusco</p>
+                <p>📍 <strong>Dirección:</strong> Urb. La Planicie D-27, Larapa, San Sebastián, Cusco</p>
+                <p>📞 <strong>WhatsApp:</strong> +51 956 246 405</p>
+                <p>🎯 <strong>Tipo:</strong> Discoteca y club nocturno</p>
+                <p>👤 <strong>Edad:</strong> Mayores de 21 años</p>
+            </div>
+            <div class="footer-section">
+                <h3>HORARIOS</h3>
+                <p>🕒 <strong>Estado:</strong> Siempre abierto</p>
+                <p>Jueves: 22:00 - 03:00</p>
+                <p>Viernes: 22:00 - 05:00</p>
+                <p>Sábado: 22:00 - 05:00</p>
+                <p>Domingo: Eventos especiales</p>
+                <p><strong>ENTRADA: GRATIS</strong></p>
+            </div>
+            <div class="footer-section">
+                <h3>ENLACES</h3>
+                <a href="#inicio">Inicio</a>
+                <a href="#entradas">Entradas Gratis</a>
+                <a href="#eventos">Eventos</a>
+                <a href="#galeria">Galería</a>
+                <a href="#contacto">Contacto</a>
+                <a href="https://wa.me/51956246405" target="_blank">Mesas VIP</a>
+                <a href="https://www.google.com/maps?q=Urb.+La+Planicie+D-27,+Larapa,+San+Sebastián,+Cusco" target="_blank">Ver en Google Maps</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2026 Ultra Club Cusco. The House of Energy. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <!-- Script para TikTok embeds -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <!-- Script para Instagram embeds -->
+    <script async src="//www.instagram.com/embed.js"></script>
+</body>
+</html>
